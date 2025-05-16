@@ -12,12 +12,16 @@
       padding: 0;
       background-color: #fff8e1; /* light yellow */
       color: #333;
+      scroll-behavior: smooth;
     }
     header {
       background-color: #ff6f3c; /* Orange */
       padding: 20px;
       color: white;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav {
       display: flex;
@@ -135,27 +139,83 @@
       text-align: center;
       padding: 20px;
     }
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #ff6f3c;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+.sticky-header.shrink {
+  padding: 5px 20px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.sticky-header img {
+  height: 100px;
+  transition: height 0.3s ease;
+}
+.sticky-header.shrink img {
+  height: 60px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 15px;
+}
+.logo-section img {
+  height: 125px;
+  transition: height 0.3s ease;
+}
+.brand-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.tagline {
+  font-size: 14px;
+  color: white;
+}
+.nav-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
   </style>
 </head>
 <body>
-<header style="background-color: #ff6f3c; padding: 10px 30px;">
-  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;">
-    <div style="display: flex; align-items: center; gap: 15px;">
-      <img src="assets/logo.png" alt="Corehands Logo" style="height: 150px; width: auto;">
+  <div id="top"></div>
+<header class="sticky-header">
+  <div class="header-container">
+    <a href="#top" class="logo-section">
+      <img src="assets/logo.png" alt="Corehands Logo">
       <div>
-        <div style="font-size: 20px; font-weight: bold; color: white;">Corehands Technologies</div> 
-<div style="font-size: 14px; color: white;">Your Core Partner in Tech & Talent</div>    
+        <div class="brand-name">Corehands Technologies</div>
+        <div class="tagline">Your Core Partner in Tech & Talent</div>
       </div>
-    </div>
-    <div style="flex-grow: 1; display: flex; justify-content: center;">
-      <nav style="display: flex; gap: 25px;">
-        <a href="#about" style="color: white; text-decoration: none; font-weight: bold;">About Us</a>
-        <a href="#services" style="color: white; text-decoration: none; font-weight: bold;">Our Services</a>
-        <a href="#contact" style="color: white; text-decoration: none; font-weight: bold;">Contact Us</a>
-        <a href="#get-hired" style="color: white; text-decoration: none; font-weight: bold;">Get Hired</a>
-        <a href="#our-team" style="color: white; text-decoration: none; font-weight: bold;">Our Team</a>
-      </nav>
-    </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#about">About Us</a>
+      <a href="#services">Our Services</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#get-hired">Get Hired</a>
+      <a href="#our-team">Our Team</a>
+    </nav>
   </div>
 </header>
   <section class="hero">
@@ -229,5 +289,16 @@
   <footer>
     <p>&copy; 2025 Corehands Technologies. All rights reserved.</p>
   </footer>
+<script>
+  const header = document.querySelector(".sticky-header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+</script>
 </body>
 </html>
