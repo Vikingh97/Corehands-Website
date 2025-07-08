@@ -190,7 +190,7 @@ z-index: 1000;
         <a href="#services" style="color: white; text-decoration: none; font-weight: bold;">Our Services</a>
         <a href="#contact" style="color: white; text-decoration: none; font-weight: bold;">Contact Us</a>
         <a href="#get-hired" style="color: white; text-decoration: none; font-weight: bold;">Get Hired</a>
-        <a href="#our-team" style="color: white; text-decoration: none; font-weight: bold;">Our Team</a>
+       <!-- <a href="#our-team" style="color: white; text-decoration: none; font-weight: bold;">Our Team</a> -->
       </nav>
     </div>
   </div>
@@ -249,10 +249,40 @@ z-index: 1000;
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <form>
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
+      <form action="https://formsubmit.co/support@corehandstechnologies.com" method="POST" onsubmit="showThankYou(event)">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <!-- Hidden input to bypass captcha and redirect -->
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+
+  <button type="submit">Send Message</button>
+</form>
+
+<!-- Thank You Message -->
+<p id="thankYouMsg" style="display:none; color: green;">Thank you for submitting your request!</p>
+
+<script>
+  function showThankYou(e) {
+    e.preventDefault();
+    const form = e.target;
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        document.getElementById('thankYouMsg').style.display = 'block';
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    });
+  }
+</script>
+
     </form>
   </section>
   <section class="get-hired" id="get-hired">
