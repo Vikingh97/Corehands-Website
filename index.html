@@ -49,26 +49,43 @@ z-index: 1000;
       max-width: 600px;
       margin: 0 auto;
     }
-    .services {
-      background-color: #ffffff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .services h2 {
-      margin-bottom: 30px;
-      color: #ff6f3c;
-    }
-    .service-item {
-      margin: 20px 0;
-    }
-    .service-item h3 {
-      color: #0277bd;
-    }
-    .services {
+    .services-section {
+  padding: 60px 20px;
+  background-color: #e1f5fe; /* Light yellow background like the first image */
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f57c00; /* Orange heading color */
+  margin-bottom: 40px;
+}
+
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff8e1; /* Light cream */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  color: #1565c0; /* Blue heading */
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #444;
 }
     .about {
       background-color: #e1f5fe; /* Light Blue */
@@ -205,45 +222,46 @@ z-index: 1000;
     <h1>Empowering Businesses with Scalable Tech Solutions</h1>
     <p>Corehands Technologies delivers cutting-edge digital services to help organizations modernize operations, improve customer engagement, and stay ahead in a tech-driven world.</p>
   </section>
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="service-item">
+  <section class="services-section">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
       <h3>IT Outsourcing & Managed Services</h3>
       <p>Dedicated remote and on-premise teams for IT operations, monitoring, and business continuity.</p>
     </div>
-    <div class="service-item">
+    <div class="service-card">
       <h3>Field Services & Support</h3>
       <p>On-site technical support, installations, and remote hands services across diverse locations and sectors.</p>
     </div>
-    <div class="service-item">
+    <div class="service-card">
       <h3>IT Infrastructure & Networking</h3>
       <p>Design, setup, and management of enterprise-grade network and IT infrastructure systems.</p>
     </div>
-    <div class="service-item">
+    <div class="service-card">
       <h3>Cloud & Data Center Solutions</h3>
       <p>Comprehensive cloud strategy, migration, and management solutions for hybrid and multi-cloud environments.</p>
     </div>
-    <div class="service-item">
+   <div class="service-card">
       <h3>Cybersecurity & Compliance</h3>
       <p>End-to-end solutions for digital security, data protection, compliance, and threat prevention.</p>
     </div>
-    <div class="service-item">
+    <div class="service-card">
       <h3>Enterprise Tech Consulting</h3>
       <p>Digital transformation roadmaps, IT modernization, and strategic consulting for long-term growth.</p>
     </div>
-    <div class="service-item">
+   <div class="service-card">
   <h3>Staffing</h3>
   <p>We provide contract staffing, permanent staffing, executive search, and HR services to help you build and scale your workforce efficiently.</p>
 </div>
-    <div class="service-item">
+   <div class="service-card">
       <h3>Web Development</h3>
       <p>We build responsive, scalable, and SEO-optimized websites that drive traffic and grow your brand online.</p>
     </div>
-    <div class="service-item">
+    <div class="service-card">
       <h3>App Development</h3>
       <p>Native and cross-platform mobile apps tailored for Android and iOS with modern UI/UX designs and functionality.</p>
     </div>
-    <div class="service-item">
+    <div class="service-card">
       <h3>Digital Marketing</h3>
       <p>Integrated SEO, social media, PPC, and content strategies that generate leads and boost digital presence.</p>
     </div>
