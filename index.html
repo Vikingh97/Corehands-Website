@@ -396,5 +396,12 @@ z-index: 1000;
     }
   });
 </script>
+    <script>
+  window.addEventListener('pageshow', event => {
+    if (event.persisted) {
+      document.querySelectorAll('form').forEach(f => f.reset());
+    }
+  });
+</script>
 </body>
 </html>
