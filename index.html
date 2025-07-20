@@ -155,6 +155,19 @@ z-index: 1000;
       margin: 0 auto;
       line-height: 1.6;
     }
+    .locations {
+      background-color: #fff9c4; /* Soft Yellow */
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .locations h2 {
+      color: #ff6f3c;
+    }
+    .locations p {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
     footer {
       background-color: #222;
       color: white;
@@ -192,6 +205,11 @@ z-index: 1000;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+}@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
   </style>
   </head>
@@ -213,7 +231,7 @@ z-index: 1000;
         <a href="#contact" style="color: white; text-decoration: none; font-weight: bold;">Contact Us</a>
         <a href="#get-hired" style="color: white; text-decoration: none; font-weight: bold;">Get Hired</a>
         <a href="#get-hired" style="color: white; text-decoration: none; font-weight: bold;">Locations</a>
-       <a href="#our-team" style="color: white; text-decoration: none; font-weight: bold;">Our Team</a>
+      <!-- <a href="#our-team" style="color: white; text-decoration: none; font-weight: bold;">Our Team</a>-->
   </a>
       </nav>
     </div>
@@ -286,9 +304,13 @@ z-index: 1000;
 ">support@corehandstechnologies.com
 </a></p>
 </section>
-<section class="our-team" id="our-team">
+<!--<section class="our-team" id="our-team">
   <h2>Our Team</h2>
   <p>Meet the people who make things happen.</p>
+</section>-->
+    <section class="locations" id="locations">
+  <h2>Locations</h2>
+  <p>locations.</p>
 </section>
  <footer style="text-align: center; padding: 20px; background-color: #f15a24; color: white;">
   <p>&copy; 2025 Corehands Technologies. All rights reserved.</p>
